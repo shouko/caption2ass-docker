@@ -1,0 +1,8 @@
+FROM alpine:latest
+
+RUN apk add --no-cache wine
+
+WORKDIR /app
+COPY Caption2Ass ./
+
+ENTRYPOINT ["wine64", "/app/bin/Caption2AssC_x64.exe"]
